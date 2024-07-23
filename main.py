@@ -4,6 +4,8 @@ from app.database import get_db
 from app.models import User
 from app.schema import UserCreate, UserUpdate
 
+#below import added
+from fastapi.responses import JSONResponse
 
 
 app = FastAPI()
@@ -47,3 +49,9 @@ def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
     db.delete(db_user)
     db.commit()
     return {"message": "User deleted successfully"}
+
+# health route added
+
+@app.get("/health")
+def get_health_status():
+         return JSONResponse(content={"status": "healthy"}, status_code=200)

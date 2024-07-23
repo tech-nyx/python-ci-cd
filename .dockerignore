@@ -1,0 +1,8 @@
+/venv 
+/app/__pycache__
+/__pycache__
+README.md 
+LICENSE
+requirements-original.txt
+.git 
+/k8s-templates
