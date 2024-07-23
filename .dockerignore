@@ -6,3 +6,4 @@ LICENSE
 requirements-original.txt
 .git 
 /k8s-templates
+Running-docker-image.md
