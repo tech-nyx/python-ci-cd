@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nyx-python-backend-api
+  namespace: nyx-backend-ns
+  labels:
+    app: nyx-backend-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nyx-backend-python
+  template:
+    metadata:
+      labels:
+        app: nyx-backend-python
+    spec:
+      serviceAccountName: nyx-backend-sa
+      containers:
+      - name: nyx-python-backend-api-container
+        image: nyx-backend-python:latest  # Replace with your image
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health 
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+        startupProbe:
+          httpGet:
+            path: /health 
+            port: 8080
+          initialDelaySeconds: 10
+          timeoutSeconds: 5
+        securityContext:
+          runAsUser: 1000   # Replace with the user ID you want to use
+          runAsGroup: 1000   
+        # Replace with your registry secret if needed
+      restartPolicy: Always
