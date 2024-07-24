@@ -1,4 +1,4 @@
- name: push-and-deploy-image
+name: push-and-deploy-image
 run-name:  push-and-deploy-image-to-gke 
 on:
     push: 
