@@ -27,7 +27,7 @@ jobs:
 
             with:
 
-              credentials_json: ${secrets.SERVICE_ACCOUNT_KEY}
+              credentials_json: $ {{ secrets.SERVICE_ACCOUNT_KEY }}
           - name: Docker Auth
             id: docker-auth
             uses: 'docker/login-action@v1'
