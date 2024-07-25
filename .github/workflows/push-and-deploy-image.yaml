@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - dev
+      - main
 
 env:
   GAR_LOCATION: asia-south2
