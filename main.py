@@ -54,4 +54,4 @@ def delete_user_by_email(user_id: int, db: Session = Depends(get_db)):
 
 @app.get("/health")
 def get_health_status():
-         return JSONResponse(content={"status": "healthy"}, status_code=200)
+         return JSONResponse(content={"status": "i am running healthy"}, status_code=200)
