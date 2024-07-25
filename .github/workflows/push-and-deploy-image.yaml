@@ -2,7 +2,8 @@ name: push-and-deploy-image
 run-name:  push-and-deploy-image-to-gke 
 on:
     push: 
-        branches: ['main','push-and-deploy-image']
+        branches: 
+        - dev
 env:
       GAR_LOCATION: asia-south2
       PROJECT_ID:  nyx-ai-415316
