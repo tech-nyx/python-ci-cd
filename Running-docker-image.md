@@ -22,7 +22,7 @@ docker container run -p 8080:8000 --name nyx-backend nyx-backend-python
 
 ```
 
-### Step3: deploy in K8S Cluster 
+### Step3: deploy to GKE Cluster 
 
 
 ```bash 
