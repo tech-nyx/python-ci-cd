@@ -8,9 +8,9 @@
 
 
 
-### Steps to run the docker container 
+### Steps to run the docker container  
 
-#### Step1: Build the image first 
+#### Step1: Build the docker  image first 
 ```bash 
 docker build -t nyx-backend-python .
 ```
