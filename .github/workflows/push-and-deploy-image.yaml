@@ -4,8 +4,7 @@ run-name: push-and-deploy-image-to-gke
 on:
   push:
     branches:
-      - main
-      - push-and-deploy-image
+      - dev
 
 env:
   GAR_LOCATION: asia-south2
