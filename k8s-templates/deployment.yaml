@@ -18,10 +18,10 @@ spec:
       serviceAccountName: nyx-backend-sa
       containers:
       - name: nyx-python-backend-api-container
-        image: nyx-backend-python:latest  # Replace with your image
+        image: asia-south2-docker.pkg.dev/nyx-ai-415316/repo-1/nyx-backend-python:38f90695aec22c12062242e0b6c12513a5ff8712
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: 8000
         
         resources:
           requests:
@@ -33,19 +33,19 @@ spec:
         livenessProbe:
           httpGet:
             path: /health
-            port: 8080
+            port: 8000
           initialDelaySeconds: 30
           timeoutSeconds: 5
         readinessProbe:
           httpGet:
             path: /health 
-            port: 8080
+            port: 8000
           initialDelaySeconds: 10
           timeoutSeconds: 5
         startupProbe:
           httpGet:
             path: /health 
-            port: 8080
+            port: 8000
           initialDelaySeconds: 10
           timeoutSeconds: 5
         securityContext:
