@@ -18,7 +18,7 @@ spec:
       serviceAccountName: nyx-backend-sa
       containers:
       - name: nyx-python-backend-api-container
-        image: asia-south2-docker.pkg.dev/nyx-ai-415316/repo-1/nyx-backend-python:38f90695aec22c12062242e0b6c12513a5ff8712
+        image: asia-south2-docker.pkg.dev/nyx-ai-415316/repo-1/nyx-backend-python:b8922a9df25a4f7d26e5f567c2b16ef23fafc96d
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
